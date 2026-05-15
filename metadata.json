@@ -1,0 +1,6 @@
+{
+  "name": "Kreeda-Prerana Scout",
+  "description": "A professional grassroots sports talent tracker for coaches. Features high-precision trial logging, real-time leaderboards, AI-powered scouting reports, and talent curve analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

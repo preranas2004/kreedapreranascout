@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "Teacher": {
+      "title": "Teacher",
+      "description": "A physical education teacher or scout using the app.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "name": { "type": "string" },
+        "schoolName": { "type": "string" },
+        "profilePicUrl": { "type": "string" }
+      },
+      "required": ["email", "name"]
+    },
+    "Athlete": {
+      "title": "Athlete",
+      "description": "A student athlete being tracked by a teacher.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "age": { "type": "integer" },
+        "sport": { "type": "string" },
+        "profilePicUrl": { "type": "string" }
+      },
+      "required": ["name", "age", "sport"]
+    },
+    "Trial": {
+      "title": "Trial",
+      "description": "A physical performance record for an athlete.",
+      "type": "object",
+      "properties": {
+        "trialType": { "type": "string" },
+        "value": { "type": "number" },
+        "unit": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["trialType", "value", "unit", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/teachers/{teacherId}": {
+      "schema": "Teacher",
+      "description": "User profile for teachers."
+    },
+    "/teachers/{teacherId}/athletes/{athleteId}": {
+      "schema": "Athlete",
+      "description": "Athletes managed by a specific teacher."
+    },
+    "/teachers/{teacherId}/athletes/{athleteId}/trials/{trialId}": {
+      "schema": "Trial",
+      "description": "Performance trials for a specific athlete."
+    }
+  }
+}
